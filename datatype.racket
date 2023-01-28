@@ -1,0 +1,7 @@
+(define (sum2 xs) (cond
+                   [(empty? xs) 0]
+                       [(number?  (first xs)) (+ (first xs) (sum2 (rest xs)))]
+                       [(string? (first xs)) (+ (string-length (first xs)) (sum2 (rest xs)))]
+                       ))
+
+(sum2 (list 1 "hi" "ram"))
